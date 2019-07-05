@@ -1,0 +1,178 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_UNCAUGHT_CXX_EXCEPTION (0xe06d7363) at pc=0x7517969b, pid=5824, tid=7732
+#
+# JRE version: 7.0-b147
+# Java VM: Java HotSpot(TM) Client VM (21.0-b17 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# C  [KERNELBASE.dll+0x969b]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0024c400):  JavaThread "main" [_thread_in_native, id=7732, stack(0x01630000,0x01680000)]
+
+siginfo: ExceptionCode=0xe06d7363, ExceptionInformation=0x19930520 0x0167f114 0x6ae69298 
+
+Registers:
+EAX=0x0167ee08, EBX=0x00000000, ECX=0x00000003, EDX=0x00000000
+ESP=0x0167ee08, EBP=0x0167ee58, ESI=0x00000022, EDI=0x0167f114
+EIP=0x7517969b, EFLAGS=0x00000212
+
+Top of Stack: (sp=0x0167ee08)
+0x0167ee08:   e06d7363 00000001 00000000 7517969b
+0x0167ee18:   00000003 19930520 0167f114 6ae69298
+0x0167ee28:   0177d760 00000030 cef2350f 00e90003
+0x0167ee38:   0167ee78 6ae515ae 00000030 988fc371
+0x0167ee48:   0167f114 00000022 00000000 0167ee6c
+0x0167ee58:   0167ee90 575c7819 e06d7363 00000001
+0x0167ee68:   00000003 0167ee84 e06d7363 00000001
+0x0167ee78:   00000000 00000000 00000003 19930520 
+
+Instructions: (pc=0x7517969b)
+0x7517967b:   89 45 c0 c1 e0 02 50 ff 75 14 8d 45 c4 50 e8 9d
+0x7517968b:   d1 ff ff 83 c4 0c 8d 45 b0 50 ff 15 5c 11 17 75
+0x7517969b:   c9 c2 10 00 89 45 c0 eb ed 90 90 90 90 90 8b ff
+0x751796ab:   55 8b ec 83 ec 1c 6a 00 6a 1c 8d 45 e4 50 6a 00 
+
+
+Register to memory mapping:
+
+EAX=0x0167ee08 is pointing into the stack for thread: 0x0024c400
+EBX=0x00000000 is an unknown value
+ECX=0x00000003 is an unknown value
+EDX=0x00000000 is an unknown value
+ESP=0x0167ee08 is pointing into the stack for thread: 0x0024c400
+EBP=0x0167ee58 is pointing into the stack for thread: 0x0024c400
+ESI=0x00000022 is an unknown value
+EDI=0x0167f114 is pointing into the stack for thread: 0x0024c400
+
+
+Stack: [0x01630000,0x01680000],  sp=0x0167ee08,  free space=315k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [KERNELBASE.dll+0x969b]  RaiseException+0x54
+C  [msvcr100.dll+0x27819]  CxxThrowException+0x45
+C  [PowerFlow.dll+0x2f80]  PowerSystem::BusAndBranch::FromConfigFile+0x170
+C  [PowerFlow.dll+0x47fa]  PowerSystem::_PowerFlow::InitBABFromFile+0x5a
+C  [PowerFlow.dll+0x1100]  Java_com_ypcl_identification_algorithm_simulator_Simulator_runFlow+0xb0
+j  com.ypcl.identification.algorithm.simulator.Simulator.runFlow(Ljava/lang/String;II)Ljava/lang/String;+0
+j  com.ypcl.identification.algorithm.simulator.Simulator.main([Ljava/lang/String;)V+22
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x122c7e]
+V  [jvm.dll+0x1c9c0e]
+V  [jvm.dll+0x122d0d]
+V  [jvm.dll+0xa77e4]
+V  [jvm.dll+0xb1b77]
+C  [javaw.exe+0x1fe5]
+C  [javaw.exe+0xa0cb]
+C  [javaw.exe+0xa155]
+C  [kernel32.dll+0x51154]  BaseThreadInitThunk+0x12
+C  [ntdll.dll+0x5b299]  RtlInitializeExceptionChain+0x63
+C  [ntdll.dll+0x5b26c]  RtlInitializeExceptionChain+0x36
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.ypcl.identification.algorithm.simulator.Simulator.runFlow(Ljava/lang/String;II)Ljava/lang/String;+0
+j  com.ypcl.identification.algorithm.simulator.Simulator.main([Ljava/lang/String;)V+22
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0175b800 JavaThread "Service Thread" daemon [_thread_blocked, id=3828, stack(0x03b30000,0x03b80000)]
+  0x01757400 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=7300, stack(0x03be0000,0x03c30000)]
+  0x01756000 JavaThread "Attach Listener" daemon [_thread_blocked, id=7404, stack(0x03a00000,0x03a50000)]
+  0x01754800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=7212, stack(0x03990000,0x039e0000)]
+  0x0173d400 JavaThread "Finalizer" daemon [_thread_blocked, id=7924, stack(0x038f0000,0x03940000)]
+  0x01738800 JavaThread "Reference Handler" daemon [_thread_blocked, id=8116, stack(0x03940000,0x03990000)]
+=>0x0024c400 JavaThread "main" [_thread_in_native, id=7732, stack(0x01630000,0x01680000)]
+
+Other Threads:
+  0x01735c00 VMThread [stack: 0x01780000,0x017d0000] [id=7572]
+  0x03c41400 WatcherThread [stack: 0x03f40000,0x03f90000] [id=7432]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 699K [0x237c0000, 0x23d10000, 0x28d10000)
+  eden space 4416K,  15% used [0x237c0000, 0x2386ee60, 0x23c10000)
+  from space 512K,   0% used [0x23c10000, 0x23c10000, 0x23c90000)
+  to   space 512K,   0% used [0x23c90000, 0x23c90000, 0x23d10000)
+ tenured generation   total 10944K, used 0K [0x28d10000, 0x297c0000, 0x337c0000)
+   the space 10944K,   0% used [0x28d10000, 0x28d10000, 0x28d10200, 0x297c0000)
+ compacting perm gen  total 12288K, used 136K [0x337c0000, 0x343c0000, 0x377c0000)
+   the space 12288K,   1% used [0x337c0000, 0x337e2108, 0x337e2200, 0x343c0000)
+    ro space 10240K,  45% used [0x377c0000, 0x37c41888, 0x37c41a00, 0x381c0000)
+    rw space 12288K,  54% used [0x381c0000, 0x388404f8, 0x38840600, 0x38dc0000)
+
+Code Cache  [0x01820000, 0x01890000, 0x03820000)
+ total_blobs=142 nmethods=11 adapters=65 free_code_cache=32322Kb largest_free_block=33098496
+
+Dynamic libraries:
+0x00a00000 - 0x00a2f000 	D:\Program Files\Java\jdk1.7.0\bin\javaw.exe
+0x76f10000 - 0x7704c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x76210000 - 0x762e4000 	C:\Windows\system32\kernel32.dll
+0x75170000 - 0x751bb000 	C:\Windows\system32\KERNELBASE.dll
+0x768a0000 - 0x76940000 	C:\Windows\system32\ADVAPI32.dll
+0x763d0000 - 0x7647c000 	C:\Windows\system32\msvcrt.dll
+0x77090000 - 0x770a9000 	C:\Windows\SYSTEM32\sechost.dll
+0x753a0000 - 0x75441000 	C:\Windows\system32\RPCRT4.dll
+0x76620000 - 0x766e9000 	C:\Windows\system32\USER32.dll
+0x76980000 - 0x769ce000 	C:\Windows\system32\GDI32.dll
+0x77060000 - 0x7706a000 	C:\Windows\system32\LPK.dll
+0x76b90000 - 0x76c2e000 	C:\Windows\system32\USP10.dll
+0x73f60000 - 0x740fe000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.16661_none_420fe3fa2b8113bd\COMCTL32.dll
+0x769d0000 - 0x76a27000 	C:\Windows\system32\SHLWAPI.dll
+0x77070000 - 0x7708f000 	C:\Windows\system32\IMM32.DLL
+0x75450000 - 0x7551c000 	C:\Windows\system32\MSCTF.dll
+0x75060000 - 0x75095000 	C:\Windows\system32\nvinit.dll
+0x575a0000 - 0x5765e000 	D:\Program Files\Java\jdk1.7.0\jre\bin\msvcr100.dll
+0x57080000 - 0x573a1000 	D:\Program Files\Java\jdk1.7.0\jre\bin\client\jvm.dll
+0x6b7f0000 - 0x6b7f7000 	C:\Windows\system32\WSOCK32.dll
+0x76940000 - 0x76975000 	C:\Windows\system32\WS2_32.dll
+0x76200000 - 0x76206000 	C:\Windows\system32\NSI.dll
+0x73550000 - 0x73582000 	C:\Windows\system32\WINMM.dll
+0x77050000 - 0x77055000 	C:\Windows\system32\PSAPI.DLL
+0x73ca0000 - 0x73cac000 	D:\Program Files\Java\jdk1.7.0\jre\bin\verify.dll
+0x71a30000 - 0x71a50000 	D:\Program Files\Java\jdk1.7.0\jre\bin\java.dll
+0x71a10000 - 0x71a23000 	D:\Program Files\Java\jdk1.7.0\jre\bin\zip.dll
+0x6ae50000 - 0x6ae70000 	C:\Windows\PowerFlow.dll
+0x6cfd0000 - 0x6d039000 	C:\Windows\system32\MSVCP100.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=GBK 
+java_command: com.ypcl.identification.algorithm.simulator.Simulator
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=D:\Program Files\Java\jdk1.7.0
+CLASSPATH=.;D:\Program Files\Java\jdk1.7.0\lib;
+PATH=D:/Program Files/Java/jdk1.7.0/bin/../jre/bin/client;D:/Program Files/Java/jdk1.7.0/bin/../jre/bin;D:/Program Files/Java/jdk1.7.0/bin/../jre/lib/i386;C:\Program Files\NVIDIA Corporation\PhysX\Common;E:\app\YaoPeng\product\11.2.0\dbhome_2\bin;C:\Program Files\Broadcom\Broadcom 802.11 Network Adapter;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft SQL Server\80\Tools\Binn\;C:\Program Files\Microsoft SQL Server\90\DTS\Binn\;C:\Program Files\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\Microsoft SQL Server\90\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files\Microsoft Visual Studio 8\Common7\IDE\PrivateAssemblies\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;D:\Program Files\MATLAB\R2010a\runtime\win32;D:\Program Files\MATLAB\R2010a\bin;D:\linux\Go\bin\;C:\Program Files\QuickTime\QTSystem\;D:\Program Files\Java\jdk1.7.0\bin;D:\linux\GNU\GNUstep\mingw\bin;D:\linux\GNU\GNUstep\GNUstep\System\Tools;D:\linux\storm\apache-storm-0.9.1-incubating\bin;;D:\Program Files\eclipse;
+USERNAME=YaoPeng
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 2466156k(294028k free), swap 6163080k(2134024k free)
+
+vm_info: Java HotSpot(TM) Client VM (21.0-b17) for windows-x86 JRE (1.7.0-b147), built on Jun 27 2011 02:25:52 by "java_re" with unknown MS VC++:1600
+
+time: Fri Jan 23 17:59:22 2015
+elapsed time: 0 seconds
+
